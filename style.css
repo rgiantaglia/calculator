@@ -1,0 +1,57 @@
+
+
+.container{
+    display: flex;
+    
+
+}
+
+.numbers{
+    display: flex;
+    flex-direction: column;
+    width: 72px;
+}
+
+.numbersC{
+    display: flex;
+    width: 24px;
+    
+}
+
+.numbersR{
+
+   width: 24px;
+}
+
+.lastRow{
+    display:flex;
+}
+
+.btnZero{
+    display: flex;
+    width: 48px;
+    justify-content: center;
+}
+
+.btnPeriod{
+    display: flex;
+    width: 24px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.operatorColumn{
+    display: flex;
+    flex-direction: column;
+    width: 24px;
+}
+
+.calculation{
+    display: flex;
+    margin-left: 24px;
+}
+
+.math{
+    width: 96px;
+}
