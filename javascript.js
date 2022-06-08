@@ -119,5 +119,6 @@ let clear = document.querySelector('.clearBtn');
 clear.addEventListener('click', () => {
     document.querySelector('.math').value = '';
     document.querySelector('.result').value = '';
+    arr = [];
     return newArr = [];
 });
