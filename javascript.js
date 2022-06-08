@@ -42,21 +42,6 @@ zero.appendChild(btnPeriod);
 
 //The separate functions aren't necessary as the equations are calculated 
 //a constructor Formula after the values are taken from the array arr.
-// const sum = function(x,y) {
-//     return x + y;
-// }
-
-// const sub = function(a,b) {
-//     return a - b;
-// }
-
-// const mult = function(a,b) {
-//     return a * b;
-// }
-
-// const division = function(a,b) {
-//     return a / b;
-// }
 
 let arr = [];
 
