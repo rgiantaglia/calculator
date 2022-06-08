@@ -1,10 +1,31 @@
 
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainContainer{
+    border: solid black 1px;
+    border-radius: 12px;
+    background-color: black;
+    width: 160px;
+    padding: 12px;
+}
 
 .container{
     display: flex;
     width: 160px;
     justify-content: center;
     border: black solid 1px;
+    background-color: black;
+}
+
+
+.calculatorContainer{
+    margin-left: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .calculator{
@@ -13,45 +34,39 @@
     margin-bottom: -21px;
 }
 
-.calculatorContainer{
-    margin-left: 24px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-
 .numbers{
     display: flex;
     flex-direction: column;
     width: 72px;
 }
 
-.numbersC{
-    display: flex;
+.numbersC,
+.numbersR {
     width: 24px;
-    
-}
-
-.numbersR{
-
-   width: 24px;
+    background-color: gray;
+    color: white;
 }
 
 .lastRow{
     display:flex;
 }
 
-.btnZero{
+.btnZero,
+.btnPeriod {
+    background-color: gray;
+    color: white;
     display: flex;
-    width: 48px;
-    justify-content: center;
-}
-
-.btnPeriod{
-    display: flex;
-    width: 24px;
     justify-content: center;
     align-content: center;
     align-items: center;
+}
+
+.btnZero{
+    width: 48px;
+}
+
+.btnPeriod{
+    width: 24px;
 }
 
 .operators{
@@ -60,10 +75,12 @@
     width: 64px;
     height: 63px;
     margin: 0px 16px;
+
 }
 
 .operators > *{
     width: 24px;
+    background-color: orange;
   
 }
 
@@ -72,7 +89,9 @@
     flex-direction: column;
     align-items: flex-end;
     width: 160px;
-    border: black solid 1px;
+    border: white solid 1px;
+    border-radius: 6px;
+    background-color: black;
     margin-bottom: 14px;
 }
 
@@ -98,4 +117,14 @@
 
 .clearBtn{
     margin-right: 24px;
+}
+
+input {
+    color: white;
+    background-color: black;
+    margin-right: 2px;
+}
+
+button{
+    border-radius: 10px;
 }

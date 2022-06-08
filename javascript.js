@@ -15,7 +15,7 @@ for (let i = 0; i <= 2 ; i++) {
         divRow.classList.add('numbersR');
         a=0;
         a = 3*i + j;
-
+        divRow.setAttribute('value',`${a}`);
         divRow.textContent = `${a}`;
         column.appendChild(divRow);
     }
@@ -44,10 +44,13 @@ zero.appendChild(btnPeriod);
 //a constructor Formula after the values are taken from the array arr.
 
 let arr = [];
+let newArr = [];
 
-const first = document.querySelectorAll('.calculator button').forEach(btn => btn.addEventListener('click', () => {
+const calculus = document.querySelectorAll('.calculator button').forEach(btn => btn.addEventListener('click', () => {
 
-    a = btn.innerText;
+    a = btn.value;
+    console.log(a);
+   
     arr.push(a);
 
     function adjustArr (arr) {
@@ -61,9 +64,33 @@ const first = document.querySelectorAll('.calculator button').forEach(btn => btn
     }
     result();
 
-    const input = document.querySelector('input');
-    input.value = t;
+    //const input = document.querySelector('input');
+    //input.value = t;
    return t;
+}));
+
+//Function to display correct symbols instead of * for multiplication and / for division
+const display = document.querySelectorAll('.calculator button').forEach(btn => btn.addEventListener('click', () => {
+
+    b = btn.innerText;
+    console.log(b);
+   
+    newArr.push(b);
+
+    function adjustArr (newArr) {
+        x = newArr.join('');
+        return x;
+    }
+
+    function result(){
+        r = adjustArr(newArr);
+        return r;
+    }
+    result();
+
+    const input = document.querySelector('input');
+    input.value = r;
+   return r;
 }));
 
 let result = document.querySelector('.equalBtn');
@@ -80,8 +107,9 @@ result.addEventListener('click', () => {
 
     const inputResult = document.querySelector('.result');
     inputResult.value = Math.round(calculate(t)*100)/100;
-    arr = [inputResult.value];
-    // arr = arr.push(Math.round(calculate(t)*100)/100);
+    arr = [inputResult.value]; //resets arr to use result in new calculation
+    newArr = [inputResult.value]; //resets newArr to display result
+  
     }
 });
 
@@ -89,5 +117,5 @@ let clear = document.querySelector('.clearBtn');
 clear.addEventListener('click', () => {
     document.querySelector('.math').value = '';
     document.querySelector('.result').value = '';
-    return arr = [];
+    return newArr = [];
 });
