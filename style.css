@@ -112,7 +112,7 @@ body{
 .signs > * {
     display: flex;
     width: 24px;
-    justify-content: center;
+    justify-content: center; 
 }
 
 .clearBtn{

@@ -82,7 +82,7 @@ const display = document.querySelectorAll('.calculator button').forEach(btn => b
         return x;
     }
 
-    function result(){
+    function result(){ 
         r = adjustArr(newArr);
         return r;
     }
