@@ -31,11 +31,13 @@ const zero = document.querySelector('.lastRow');
 const btnZero = document.createElement('button');
 btnZero.classList.add('btnZero');
 btnZero.textContent = 0;
+btnZero.setAttribute('value', '0')
 zero.appendChild(btnZero);
 
 const btnPeriod = document.createElement('button');
 btnPeriod.classList.add('btnPeriod');
 btnPeriod.textContent = '.';
+btnPeriod.setAttribute('value', '.')
 zero.appendChild(btnPeriod);
 
 //Calculator
