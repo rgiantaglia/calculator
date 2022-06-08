@@ -38,42 +38,11 @@ btnPeriod.classList.add('btnPeriod');
 btnPeriod.textContent = '.';
 zero.appendChild(btnPeriod);
 
-    //Add operators
-const operatorsContainer = document.querySelector('.operators');
-
-const operatorColumn = document.createElement('div');
-operatorColumn.classList.add('operatorColumn')
-operatorsContainer.appendChild(operatorColumn);
-
-    //Addition
-const operators = document.querySelector('.operatorColumn')
-const btnAdd = document.createElement('button');
-btnAdd.classList.add('addition');
-btnAdd.textContent = '+';
-operatorColumn.appendChild(btnAdd);
-
-    //Subtraction
-const btnSub = document.createElement('button');
-btnSub.classList.add('subtraction');
-btnSub.textContent = '-';
-operatorColumn.appendChild(btnSub);
-
-    //Multiplication
-const btnMult = document.createElement('button');
-btnMult.classList.add('multiplication');
-btnMult.textContent = '*';
-operatorColumn.appendChild(btnMult);
-
-    //Division
-const btnDiv = document.createElement('button');
-btnDiv.classList.add('division');
-btnDiv.textContent = '/';
-operatorColumn.appendChild(btnDiv);
-
 //Calculator
 
-const sum = function(a,b) {
-    return a + b;
+
+const sum = function(x,y) {
+    return x + y;
 }
 
 const sub = function(a,b) {
@@ -88,3 +57,51 @@ const division = function(a,b) {
     return a / b;
 }
 
+let arr = [];
+
+const first = document.querySelectorAll('.calculator button').forEach(btn => btn.addEventListener('click', () => {
+
+    a = btn.innerText;
+    arr.push(a);
+
+    function adjustArr (arr) {
+        x = arr.join('');
+        return x;
+    }
+
+    function result(){
+        t = adjustArr(arr);
+        return t;
+    }
+    result();
+
+    const input = document.querySelector('input');
+    input.value = t;
+   return t;
+}));
+
+let result = document.querySelector('.equalBtn');
+result.addEventListener('click', () => {
+    function calculate (fn) {
+        return new Function('return ' + fn)();
+    }
+    calculate(t);
+    if (calculate(t) == 'Infinity' || calculate(t) == '-Infinity') {
+        alert ('You cannot dived a number by 0')
+        return 'Error';
+    }else {
+    console.log(calculate(t));
+
+    const inputResult = document.querySelector('.result');
+    inputResult.value = Math.round(calculate(t)*100)/100;
+    arr = [inputResult.value];
+    // arr = arr.push(Math.round(calculate(t)*100)/100);
+    }
+});
+
+let clear = document.querySelector('.clearBtn');
+clear.addEventListener('click', () => {
+    document.querySelector('.math').value = '';
+    document.querySelector('.result').value = '';
+    return arr = [];
+});

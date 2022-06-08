@@ -2,8 +2,21 @@
 
 .container{
     display: flex;
-    
+    width: 160px;
+    justify-content: center;
+    border: black solid 1px;
+}
 
+.calculator{
+    width: 160px;
+    display: flex;
+    margin-bottom: -21px;
+}
+
+.calculatorContainer{
+    margin-left: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .numbers{
@@ -41,17 +54,48 @@
     align-items: center;
 }
 
-.operatorColumn{
+.operators{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    width: 64px;
+    height: 63px;
+    margin: 0px 16px;
+}
+
+.operators > *{
     width: 24px;
+  
 }
 
 .calculation{
     display: flex;
-    margin-left: 24px;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 160px;
+    border: black solid 1px;
+    margin-bottom: 14px;
 }
 
-.math{
+.calculation > *{
     width: 96px;
+    display: flex;
+    border-style: hidden;
+    text-align: right;
+    padding: 6px 12px 6px 0;
+}
+
+.signs {
+    display: flex;
+    justify-content: end;
+    width: 160px;
+}
+
+.signs > * {
+    display: flex;
+    width: 24px;
+    justify-content: center;
+}
+
+.clearBtn{
+    margin-right: 24px;
 }
